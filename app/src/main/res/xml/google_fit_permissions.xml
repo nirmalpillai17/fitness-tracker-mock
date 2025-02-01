@@ -1,0 +1,3 @@
+<fitness-app>
+    <data-source type="raw" data-type="com.google.step_count.delta" />
+</fitness-app>
