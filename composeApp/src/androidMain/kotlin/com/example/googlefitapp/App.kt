@@ -15,27 +15,19 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.fitness.Fitness
 import com.google.android.gms.fitness.data.*
 import com.google.android.gms.fitness.request.DataUpdateRequest
-import com.microsoft.appcenter.AppCenter
-import com.microsoft.appcenter.analytics.Analytics
-import com.microsoft.appcenter.crashes.Crashes
 import java.time.LocalDate
 import java.time.ZoneId
 import java.util.concurrent.TimeUnit
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        
-        AppCenter.start(application, "df4d6a5a-da7b-46ef-bbb3-7a8d6af97e41", Analytics::class.java, Crashes::class.java)
-        
-        setContent {
-            GoogleFitApp()
-        }
-    }
-}
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
+
+import googlefitmocker.composeapp.generated.resources.Res
+import googlefitmocker.composeapp.generated.resources.compose_multiplatform
 
 @Composable
-fun GoogleFitApp() {
+@Preview
+fun App() {
     var startDate by remember { mutableStateOf(LocalDate.now()) }
     var endDate by remember { mutableStateOf(LocalDate.now()) }
     var stepCount by remember { mutableStateOf(0) }
